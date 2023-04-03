@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> quizup?! </title>
+        <link rel="stylesheet" href="customstyle.css">
+       
+    </head>
+    <body>
+        <div class="main">
+            <div id="box">
+                <div class="question">
+                    <h1 id="quesnum"></h1>
+                    <h3 id="quesbox">First things first! Select your house: </h3>
+                </div>
+                <div class="row">
+                    <img src="gryffindor.jpg">
+                    <button  value="red" class="btn btn-1">Gryffindor</button>                    
+                </div>
+                <div class="row">
+                    <img src="hufflepuff.jpg">
+                    <button  value="yellow" class="btn btn-2">Hufflepuff</button>    
+                </div>
+                <div class="row">
+                    <img src="ravenclaw.jpg">
+                    <button value="blue" class="btn btn-3">Ravenclaw</button>    
+                </div>
+                <div class="row">
+                    <img src="slytherin.jpg">
+                    <button  value="green" class="btn btn-4">Slytherin</button>    
+                </div>
+                <button class="btn btn-5"><a href="quiz.html">Start Quiz</a></button>
+            </div>
+        </div>
+        <style>
+            a{
+               text-decoration: none;
+               color:black;
+            }
+
+            a:hover{
+                color: white;
+            }
+
+            .btn{
+                position:absolute;
+                margin-top: 20px;
+                left:600px;
+                width:10%;
+            }
+            img{
+                height:80px;
+                width:20%;
+                border-radius: 10px;
+            }
+            .btn-1{background-color: rgb(255, 0, 0);}
+            .btn-2{background-color:rgb(255, 255, 0)}
+            .btn-3{background-color:rgb(0, 0, 242)}
+            .btn-4{background-color:rgb(0, 255, 0)}
+            .btn-5{background-color: white}
+        </style>
+        <script>
+            let btns=document.getElementsByClassName("btn");
+
+    for(let i=0;i<btns.length;i++)
+    {
+        btns[i].addEventListener("click",function(){
+        {
+            let btnsStyle=getComputedStyle(this);
+            let buttoncolor=btnsStyle["backgroundColor"];
+            console.log(buttoncolor);
+            document.body.style.backgroundColor=buttoncolor;
+        }
+    })
+} 
+        </script>
+    </body>
+</html>
